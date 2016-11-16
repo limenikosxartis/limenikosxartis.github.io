@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ΣΗΜΑΙΟΦΟΡΟΙ ΛΣ ΤΑΞΗ 2016</title>
+  <meta name="description" content="Πληροφορίες για την Ταξη 2016 Σημαιοφόροι ΛΣ. Για οποιαδήποτε αλλαγή παρακαλώ ενημερώστε με για να ενημερωθει και το site. &lt;3">
+
+  <link rel="stylesheet" href="assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="ΣΗΜΑΙΟΦΟΡΟΙ ΛΣ ΤΑΞΗ 2016" href="/feed.xml">
+  
+  
+<script type='text/javascript'>
+  /* global google */
+/* global MarkerClusterer */
+// eslint-disable-next-line no-unused-vars
+var jekyllMaps = (function () {
+  'use strict'
+  var clusterSettings = {}
+  var clusterReady = false
+  var mapReady = false
+  var options = {}
+  var data = []
+  var maps = []
+
+  return {
+    initializeMap: initializeMap,
+    initializeCluster: initializeCluster,
+    register: register
+  }
+
+  /**
+   * Setup Google Maps options and call renderer.
+   */
+  function initializeMap () {
+    options = {
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      center: new google.maps.LatLng(0, 0)
+    }
+    mapReady = true
+    render()
+  }
+
+  /**
+   * Register map data to be rendered once Google Maps API is loaded.
+   *
+   * @param string id
+   * @param Array locations
+   * @param Object settings
+   */
+  function register (id, locations, options) {
+    data.push({ id: id, locations: locations, options: options })
+    render()
+  }
+
+  /**
+   * Render maps data if Google Maps API is loaded.
+   */
+  function render () {
+    if (!mapReady) return
+
+    while (data.length > 0) {
+      var item = data.pop()
+      var bounds = new google.maps.LatLngBounds()
+      var mapOptions = Object.assign({}, options, item.options)
+      var map = new google.maps.Map(document.getElementById(item.id), mapOptions)
+      var infoWindow = new google.maps.InfoWindow()
+      var markers = item.locations.map(createMarker)
+
+      map.fitBounds(bounds)
+      google.maps.event.addListenerOnce(map, 'bounds_changed', function() {
+        if (this.customZoom) this.setZoom(this.customZoom)
+      })
+      if (mapOptions.useCluster) {
+        maps.push({ map: map, markers: markers })
+        processCluster()
+      }
+    }
+
+    function createMarker (location) {
+      var position = new google.maps.LatLng(location.latitude, location.longitude)
+      var marker = new google.maps.Marker({
+        position: position,
+        title: location.title,
+        image: location.image,
+        url: location.url,
+        map: map
+      })
+
+      bounds.extend(position)
+      if (mapOptions.showMarkerPopup) marker.addListener('click', markerPopup)
+
+      return marker
+    }
+
+    function markerPopup () {
+      var contentString = '<div class="map-info-window"><h5>' + this.title + '</h5>'
+      var link = 'View'
+      if (this.image.length > 0) {
+        link = '<img src="' + this.image + '" alt="' + this.title + '"/>'
+      }
+      contentString += '<a href="' + this.url + '">' + link + '</a></div>'
+      infoWindow.setContent(contentString)
+      infoWindow.open(map, this)
+    }
+  }
+
+  function initializeCluster (settings) {
+    clusterReady = true
+    clusterSettings = settings || {}
+    processCluster()
+  }
+
+  function processCluster () {
+    if (!clusterReady) return
+
+    while (maps.length > 0) {
+      var obj = maps.pop()
+      // eslint-disable-next-line no-new
+      new MarkerClusterer(obj.map, obj.markers, {
+        gridSize: clusterSettings.grid_size || 25,
+        imagePath: 'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m'
+      })
+    }
+  }
+}())
+/* Object.assign polyfill */
+if (typeof Object.assign !== 'function') {
+  Object.assign = function (target) {
+    'use strict'
+    if (target == null) {
+      throw new TypeError('Cannot convert undefined or null to object')
+    }
+
+    target = Object(target)
+    for (var index = 1; index < arguments.length; index++) {
+      var source = arguments[ index ]
+      if (source != null) {
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[ key ] = source[ key ]
+          }
+        }
+      }
+    }
+    return target
+  }
+}
+
+</script>
+<script async defer src='https://maps.googleapis.com/maps/api/js?key=&callback=jekyllMaps.initializeMap'></script>
+
+<script async defer src='https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js'
+        onload='jekyllMaps.initializeCluster({})'></script>
+
+</head>
+
+
+  <body>
+
+    
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
+
+  
+  <div id="a8b9366c-8bc3-45d6-a3e8-3d09dab595f2" style="width:100%;height:400px;"></div>
+<script type="text/javascript">
+  jekyllMaps.register(
+    'a8b9366c-8bc3-45d6-a3e8-3d09dab595f2',
+    [{"latitude":37.132171,"longitude":26.8529,"title":"ΠΑΠΑΔΑΚΗΣ ΑΛΕΞΑΝΔΡΟΣ </br> <font color=blue>ΚΙΝ: 6976728795  </br> ΓΡΑΦΕΙΟ/Α: - </font> ","url":"/","image":""},{"latitude":37.132171,"longitude":26.8528,"title":"ΣΤΕΦΑΝΟΠΟΥΛΟΣ ΜΠΑΜΠΗΣ </br> <font color=blue>ΚΙΝ: 6976728795  </br> ΓΡΑΦΕΙΟ/Α: - </font> ","url":"/","image":""},{"latitude":37.132171,"longitude":26.8527,"title":"ΓΩΓΟΥΛΑΣ ΠΕΡΙΚΛΗΣ </br> <font color=blue>ΚΙΝ: 6976728795  </br> ΓΡΑΦΕΙΟ/Α: - <br> ΠΛΣ 608 </font> ","url":"/","image":""}],
+    {"useCluster":true,"showMarkerPopup":true}
+  );
+</script>
+
+
+
+
+</div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="footer">
+
+	  Made with ❤️ by <a href=papadakis@ceid.upatras.gr>Αλέξανδρος Σωκράτης Παπαδάκης</a>
+
+
+</footer>
+
+
+  </body>
+
+</html>
